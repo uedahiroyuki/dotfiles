@@ -1,0 +1,24 @@
+""for ueda
+set noerrorbells 
+set visualbell t_vb=
+
+syntax enable
+"colorscheme slate
+
+set noincsearch
+set guioptions-=T
+set cursorline
+hi clear CursorLine
+
+set mouse=
+set nomousefocus
+set nomousehide
+set clipboard=unnamed,autoselect
+set guioptions+=A
+
+highlight Normal guibg=#fffbf0
+
+:set lines=65 columns=250
+
+
+
