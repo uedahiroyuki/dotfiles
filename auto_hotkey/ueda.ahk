@@ -1,9 +1,24 @@
 GroupAdd RealVim, ahk_exe gvim.exe
 GroupAdd RealVim, ahk_exe ExceedonDemand.exe
+GroupAdd RealVim, ahk_class mintty
+GroupAdd RealVim, ahk_exe cmd.exe
 
-F1::return  
+;F1::return  
 
 SetTitleMatchMode, 2
+
+
+#IfWinActive, ahk_class CabinetWClass
+;  *>h::SendEvent {BS}   
+;  *>j::SendEvent {Down} 
+;  *>k::SendEvent {Up} 
+;  *>l::SendEvent {Enter}
+;  *>^h::SendEvent {BS}   
+;  *>^j::SendEvent {Down} 
+;  *>^k::SendEvent {Up} 
+;  *>^l::SendEvent {Enter}
+;  *>-::SendEvent {BS}   
+#IfWinActive
 #IfWinNotActive, ahk_group RealVim
   *>^h::SendEvent {Left}   
   *>^j::SendEvent {Down} 
@@ -21,8 +36,25 @@ SetTitleMatchMode, 2
   *>^r::SendEvent ^{y}
   *>^y::SendEvent ^{c}
   *>^p::SendEvent ^{v}
-  *>^x::SendEvent ^{x}
+;  *>^x::SendEvent ^{x}
+  >^i::SendEvent {F2}   
 #IfWinNotActive
 #IfWinActive, ahk_exe EXCEL.EXE
-  >^i::SendEvent {F2}   
+  *>^.::SendEvent ^{PgDn}
+  *>^,::SendEvent ^{PgUp}
 #IfWinActive
+#IfWinActive, ahk_exe WinMergeU.exe
+  *>^.::SendEvent ^+{Tab}
+  *>^,::SendEvent ^{Tab}
+#IfWinActive
+#IfWinActive, ahk_exe SumatraPDF.exe
+  *>^.::SendEvent ^{Tab}
+  *>^,::SendEvent ^+{Tab}
+#IfWinActive
+#IfWinActive, ahk_exe chrome.exe
+  *>^.::SendEvent ^{Tab}
+  *>^,::SendEvent ^+{Tab}
+#IfWinActive
+
+
+
