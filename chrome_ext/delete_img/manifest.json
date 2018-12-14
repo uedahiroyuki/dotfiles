@@ -1,0 +1,16 @@
+{
+  "name": "Destroy Img Tags!!",
+  "description": "delete img tags",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "foreground/popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["doDelete.js"]
+  }],
+  "permissions": [
+    "tabs"
+  ]
+}

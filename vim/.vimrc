@@ -39,8 +39,10 @@ let @f='/([0-9a-f]{8})'
 "let @m=':set virtualedit=block0'
 "let @h=':set virtualedit=all78zl'
 nnoremap <space> i<space><esc>
-nnoremap <C-i> viw
+"nnoremap <C-i> viw
 
+cnoremap <C-H> <Left>
+cnoremap <C-L> <Right>
 
 set tags=.tags
 nnoremap <C-]> g<C-]>
@@ -54,15 +56,17 @@ inoremap <silent> <C-l> <Right>
 "inoremap <silent> :w <ESC>:w
 
 
+
 " Save fold settings.
 autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
-autocmd BufEnter * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
+autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
 autocmd BufLeave * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
 autocmd VimLeave * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
 " Don't save options.
 set viewoptions-=options
 
-set clipboard=unnamed,autoselect
 
+"set clipboard=unnamed,autoselect
+set clipboard=unnamed
 
 

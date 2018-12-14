@@ -55,6 +55,12 @@ SetTitleMatchMode, 2
   *>^.::SendEvent ^{Tab}
   *>^,::SendEvent ^+{Tab}
 #IfWinActive
-
+#IfWinActive, ahk_exe sakura.exe
+  *>^.::SendEvent ^{Tab}
+  *>^,::SendEvent ^+{Tab}
+#IfWinActive
+#IfWinActive, ahk_exe Explorer.EXE
+  *!>LButton::SendEvent {BS}
+#IfWinActive
 
 
