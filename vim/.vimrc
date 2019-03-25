@@ -11,8 +11,10 @@ colorscheme slate
 
 
 set hlsearch
+set statusline=%f\ %m%r%h%w%=\ x:%3v\ y:%4l/%4L\ %3P
+set laststatus=2
 
-set ts=4 
+set ts=4
 set softtabstop=4 
 set nowrap
 set virtualedit+=block
@@ -27,15 +29,24 @@ set smartindent
 set nocompatible
 set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
-nmap ff :ls<CR>:b
-nmap <C-l> :bn<CR>
-nmap <C-h> :bp<CR>
+"nmap ff :ls<CR>:b
+"nmap <C-l> :bn<CR>
+"nmap <C-h> :bp<CR>
+nmap <C-l> zlzlzl
+nmap <C-h> zhzhzh
 nmap <C-p> :bd<CR>:vs<CR>
-map <C-j> <C-E><C-E>
-map <C-k> <C-Y><C-Y>
+map <C-j> <C-E><C-E><C-E>
+map <C-k> <C-Y><C-Y><C-Y>
+vmap <S-j> jjj
+vmap <S-k> kkk
 nmap / /\v
 vnoremap <silent> <C-p> "0p
-let @f='/([0-9a-f]{8})'
+
+"useage @f,@s : Use in visual mode, Select target lines, Type @f or @s.
+"let @f='/([0-9a-f]{8})'
+let @f=':([0-9a-f]{8})/\1 /g'
+let @s=': //g'
+
 "let @m=':set virtualedit=block0'
 "let @h=':set virtualedit=all78zl'
 nnoremap <space> i<space><esc>
@@ -44,11 +55,11 @@ nnoremap <space> i<space><esc>
 cnoremap <C-H> <Left>
 cnoremap <C-L> <Right>
 
-set tags=.tags
+set tags=.tags,tags
 nnoremap <C-]> g<C-]>
 set ea
 
-inoremap <silent> jj <ESC>
+"inoremap <silent> jj <ESC>
 inoremap <silent> <C-h> <Left>
 inoremap <silent> <C-j> <Down>
 inoremap <silent> <C-k> <Up>
