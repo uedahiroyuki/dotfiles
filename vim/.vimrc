@@ -8,6 +8,7 @@ set nocursorline
 
 syntax enable
 colorscheme slate
+"colorscheme default
 
 
 set hlsearch
@@ -16,6 +17,7 @@ set laststatus=2
 
 set ts=4
 set softtabstop=4 
+set shiftwidth=4 
 set nowrap
 set virtualedit+=block
 set autoread

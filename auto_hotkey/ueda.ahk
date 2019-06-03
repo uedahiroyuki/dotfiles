@@ -58,8 +58,14 @@ SetTitleMatchMode, 2
 #IfWinActive, ahk_exe SumatraPDF.exe
   *>^.::SendEvent ^{Tab}
   *>^,::SendEvent ^+{Tab}
+  *!LButton::SendEvent !{Left}
+  *!RButton::SendEvent !{Right}
 #IfWinActive
 #IfWinActive, ahk_exe chrome.exe
+  *>^.::SendEvent ^{Tab}
+  *>^,::SendEvent ^+{Tab}
+#IfWinActive
+#IfWinActive, ahk_exe PaintDotNet.exe
   *>^.::SendEvent ^{Tab}
   *>^,::SendEvent ^+{Tab}
 #IfWinActive
